@@ -28,3 +28,18 @@ func getAlbums(c *gin.Context) {
 }
 ```
 So we define the variable that is going to use the gin.context
+
+## Main function
+First we init the router using ```gin.Default()```
+```go
+func main() {
+	router := gin.Default()
+	router.GET("/albums", getAlbums)
+	router.Run("localhost:8080")
+}
+```
+## Running the app
+in the command line type the following:
+```bash
+go run .
+```
