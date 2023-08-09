@@ -1,7 +1,11 @@
 // since this is standalone program (oposed to a library)
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
 
 type album struct {
 	//this `json:"id" is for serialization` so to not use the capitalized prop
@@ -19,5 +23,5 @@ var albums = []album{
 }
 
 func getAlbums(c *gin.Context) {
-
+	c.IndentedJSON(http.StatusOK, albums)
 }
