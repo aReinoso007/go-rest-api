@@ -60,7 +60,13 @@ animals := []string{"dog","fish","cow"}
 for _, animal := range animals{
     log.Println(animal)
 }
-
+```
+and the output would be something like this:
+```bash
+    dog
+    fish
+    cow
+```
 ## Running the app
 in the command line type the following:
 ```bash
