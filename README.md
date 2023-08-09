@@ -38,6 +38,29 @@ func main() {
 	router.Run("localhost:8080")
 }
 ```
+
+## Blanc identifyer ```_```
+So when looping through an array we will have something like this:
+```go
+animals := []string{"dog","fish","cow"}
+for i, animal := range animals{
+    log.Println(i, animal)
+}
+```
+and the output would be something like this:
+```bash
+0 dog
+1 fish
+2 cow
+```
+What if I dont care about the index?
+Then we use the 'blanc identifyer' to tell go compiler that we dont care about the fist value being returned and we dont have an error
+```go
+animals := []string{"dog","fish","cow"}
+for _, animal := range animals{
+    log.Println(animal)
+}
+
 ## Running the app
 in the command line type the following:
 ```bash
