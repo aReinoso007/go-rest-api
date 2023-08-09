@@ -18,3 +18,13 @@ type album struct {
 }
 ```
 `json:"id" is for serialization` so to not use the capitalized prop when passing data through a request
+
+## Controller
+To create an endpoint we gotta use the ```gin.Context``` which is the most important part of Gin for it carries the request details, validates and serializes JSON.
+Calling ```Context.IndentedJSON``` to serialize the struct into JSON and add it to the response:
+```go
+func getAlbums(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, albums)
+}
+```
+So we define the variable that is going to use the gin.context
